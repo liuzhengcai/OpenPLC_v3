@@ -117,9 +117,9 @@ function install_py_deps {
     source "$VENV_DIR/bin/activate"
     "$VENV_DIR/bin/python3" -m pip install --upgrade pip
     if [ "$1" == "neuron" ]; then
-        "$VENV_DIR/bin/python3" -m pip install flask==2.2.5 werkzeug==2.2.2 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt
+        "$VENV_DIR/bin/python3" -m pip install flask==2.2.5 werkzeug==2.2.2 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt requests
     else
-        "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt
+        "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt requests
     fi
     python3 -m pip install pymodbus==2.5.3
     deactivate
@@ -328,7 +328,7 @@ if [ "$1" == "win" ]; then
     #Setting up venv
     python3 -m venv "$VENV_DIR"
     "$VENV_DIR/bin/python3" get-pip3.py
-    "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt
+    "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt requests
     
     echo ""
     echo "[MATIEC COMPILER]"
@@ -356,7 +356,7 @@ elif [ "$1" == "win_msys2" ]; then
     #Setting up venv
     python3 -m venv "$VENV_DIR"
     "$VENV_DIR/bin/python3" get-pip3.py
-    "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt
+    "$VENV_DIR/bin/python3" -m pip install flask==2.3.3 werkzeug==2.3.7 flask-login==0.6.2 pyserial pymodbus==2.5.3 paho-mqtt requests
     
     echo ""
     echo "[MATIEC COMPILER]"
